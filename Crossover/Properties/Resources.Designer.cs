@@ -333,16 +333,6 @@ namespace Crossover.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] laser_01 {
-            get {
-                object obj = ResourceManager.GetObject("laser_01", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] rpg_background_sprite {
             get {
                 object obj = ResourceManager.GetObject("rpg_background_sprite", resourceCulture);

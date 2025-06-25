@@ -95,14 +95,14 @@ namespace Crossover
 
         private void PlayBackgroundMusic()
         {
-                backgroundMusicPlayer?.PlayLooping(); 
-            
+            backgroundMusicPlayer?.PlayLooping();
+
         }
 
         private void InitializePauseMenu()
         {
             pauseMenuButton = new Button();
-            pauseMenuButton.Text = "⋮"; 
+            pauseMenuButton.Text = "⋮";
             pauseMenuButton.Size = new Size(40, 40);
             pauseMenuButton.Location = new Point(this.ClientSize.Width - 50, 10);
             pauseMenuButton.Font = new Font("Arial", 16, FontStyle.Bold);
@@ -112,7 +112,7 @@ namespace Crossover
             pauseMenuButton.FlatAppearance.BorderSize = 1;
             pauseMenuButton.FlatAppearance.BorderColor = Color.White;
             pauseMenuButton.Click += PauseMenuButton_Click;
-            pauseMenuButton.TabStop = false; 
+            pauseMenuButton.TabStop = false;
 
             this.Controls.Add(pauseMenuButton);
             pauseMenuButton.BringToFront();
@@ -120,7 +120,7 @@ namespace Crossover
             pausePanel = new Panel();
             pausePanel.Size = new Size(300, 200);
             pausePanel.Location = new Point((this.ClientSize.Width - 300) / 2, (this.ClientSize.Height - 200) / 2);
-            pausePanel.BackColor = Color.FromArgb(220, 0, 0, 0); 
+            pausePanel.BackColor = Color.FromArgb(220, 0, 0, 0);
             pausePanel.BorderStyle = BorderStyle.FixedSingle;
             pausePanel.Visible = false;
 
@@ -197,10 +197,7 @@ namespace Crossover
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Kembali ke menu utama? Progress akan hilang!",
-                                                "Konfirmasi",
-                                                MessageBoxButtons.YesNo,
-                                                MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Kembali ke menu utama? Progress akan hilang!","Konfirmasi",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -216,7 +213,7 @@ namespace Crossover
 
         private void GameLoop(object sender, EventArgs e)
         {
-            if (isPaused) return; 
+            if (isPaused) return;
 
             player.Update();
 
@@ -291,15 +288,15 @@ namespace Crossover
                 enemy.UpdateGravity(rooms[currentRoomIndex].Platforms);
             }
 
-            foreach (var candy in candies.ToList()) 
+            foreach (var candy in candies.ToList())
             {
-                if (!candy.IsAlive) continue; 
+                if (!candy.IsAlive) continue;
 
                 candy.Move();
 
                 foreach (var enemy in activeEnemies.ToList())
                 {
-                    if (!candy.IsAlive) break; 
+                    if (!candy.IsAlive) break;
 
                     if (candy.Bounds.IntersectsWith(enemy.Bounds))
                     {
@@ -324,6 +321,7 @@ namespace Crossover
 
             if (player.X < 0)
                 player.X = 0;
+
             if (currentRoomIndex == 5 && rooms[5].Door.HasValue)
             {
                 Rectangle playerRect = new Rectangle(player.X, player.Y, player.Width, player.Height);
@@ -363,7 +361,7 @@ namespace Crossover
 
         private void Animate(object sender, EventArgs e)
         {
-            if (isPaused) return; 
+            if (isPaused) return;
 
             var anim = player.Animations[player.CurrentState];
             player.CurrentFrame = (player.CurrentFrame + 1) % anim.Count;
@@ -398,7 +396,7 @@ namespace Crossover
 
         private void HandleInputDown(Keys key)
         {
-            if (isPaused) return; 
+            if (isPaused) return;
 
             switch (key)
             {
@@ -423,7 +421,7 @@ namespace Crossover
 
         private void HandleInputUp(Keys key)
         {
-            if (isPaused) return; 
+            if (isPaused) return;
 
             if (key == Keys.A || key == Keys.D)
                 player.Stop();

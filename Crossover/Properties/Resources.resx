@@ -199,9 +199,6 @@
   <data name="jump_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jump_04.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="laser_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\laser_01.wav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="rpg_background_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rpg_background_sprite.jpeg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

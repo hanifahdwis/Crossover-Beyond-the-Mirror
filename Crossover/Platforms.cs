@@ -19,10 +19,7 @@ namespace Crossover
 
         public void Draw(Graphics g)
         {
-            if (Image != null)
-                g.DrawImage(Image, X, Y, Width, Height);
-            else
-                g.FillRectangle(Brushes.HotPink, Bounds);
+            g.DrawImage(Image, X, Y, Width, Height);
         }
     }
 }

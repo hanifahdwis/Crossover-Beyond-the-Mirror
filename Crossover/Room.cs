@@ -14,7 +14,7 @@ public class Room
 
     public Room(int offsetX, int roomIndex, Image groundImage)
     {
-        OffsetX = offsetX;  
+        OffsetX = offsetX;
         using (var ms = new MemoryStream(Crossover.Properties.Resources.Door))
         {
             doorSprite = Image.FromStream(ms);
@@ -52,7 +52,7 @@ public class Room
                 break;
             case 5:
                 Platforms.Add(new Platform(offsetX + 350, 200, 200, 20, groundImage));
-                Platforms.Add(new Platform(offsetX + 150, 250, 120, 20, groundImage)); 
+                Platforms.Add(new Platform(offsetX + 150, 250, 120, 20, groundImage));
                 Door = new Rectangle(offsetX + 420, 120, 120, 100);
                 Enemies.Add(new Enemy(offsetX + 500, 200));
                 break;
